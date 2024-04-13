@@ -20,12 +20,12 @@ export const units: readonly Unit[] = [
   {
     unitNumber: 1,
     description: "Form basic sentences, greet people",
-    backgroundColor: "bg-[#58cc02]",
-    textColor: "text-[#58cc02]",
-    borderColor: "border-[#46a302]",
+    backgroundColor: "bg-[#dba4eb]",
+    textColor: "text-[#dba4eb]",
+    borderColor: "border-[#be3de3]",
     tiles: [
       {
-        type: "star",
+        type: "book",
         description: "Form basic sentences",
       },
       {
@@ -33,7 +33,7 @@ export const units: readonly Unit[] = [
         description: "Good morning",
       },
       {
-        type: "star",
+        type: "book",
         description: "Greet people",
       },
       { type: "treasure" },
