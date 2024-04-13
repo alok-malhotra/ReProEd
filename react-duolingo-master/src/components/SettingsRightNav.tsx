@@ -10,11 +10,11 @@ const useSettingsPages = () => {
     ? ([
         { title: "Account", href: "/settings/account" },
         { title: "Sound", href: "/settings/sound" },
-        { title: "Edit Daily Goal", href: "/settings/coach" },
+        // { title: "Edit Daily Goal", href: "/settings/coach" },
       ] as const)
     : ([
         { title: "Sound", href: "/settings/sound" },
-        { title: "Edit Daily Goal", href: "/settings/coach" },
+        // { title: "Edit Daily Goal", href: "/settings/coach" },
       ] as const);
 };
 
