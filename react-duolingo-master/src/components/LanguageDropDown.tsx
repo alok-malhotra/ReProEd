@@ -33,7 +33,6 @@ export const LanguageDropDown = () => {
                   tabIndex={0}
                   className="flex items-center gap-3 whitespace-nowrap rounded-xl p-3 hover:bg-gray-300"
                 >
-                  <Flag language={language} width={24} />
                   {language.nativeName}
                 </Link>
               </li>
