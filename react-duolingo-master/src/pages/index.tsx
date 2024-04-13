@@ -31,12 +31,6 @@ const Home: NextPage = () => {
             >
               Get started
             </Link>
-            <button
-              className="w-full rounded-2xl border-2 border-b-4 border-[#042c60] bg-[#235390] px-8 py-3 font-bold uppercase transition hover:bg-[#204b82] md:min-w-[320px]"
-              onClick={() => setLoginScreenState("LOGIN")}
-            >
-              I already have an account
-            </button>
           </div>
         </div>
       </div>
