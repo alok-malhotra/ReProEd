@@ -30,7 +30,7 @@ const Home: NextPage = () => {
               href="/register"
               className="w-full rounded-2xl border-b-4 border-green-700 bg-green-600 px-10 py-3 text-center font-bold uppercase transition hover:border-green-600 hover:bg-green-500 md:min-w-[320px]"
             >
-              Get started
+              Lets go!
             </Link>
           </div>
         </div>
