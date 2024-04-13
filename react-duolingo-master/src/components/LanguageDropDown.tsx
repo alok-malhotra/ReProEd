@@ -22,7 +22,7 @@ export const LanguageDropDown = () => {
       }}
     >
       <span className="text-md uppercase">Site language: English</span>{" "}
-      <ChevronDownSvg />
+{/*      <ChevronDownSvg />
       {languagesShown && (
         <ul className="absolute right-0 top-full grid w-[500px] grid-cols-2 rounded-2xl border-2 border-gray-200 bg-white p-6 font-light text-gray-600">
           {languages.map((language) => {
@@ -39,7 +39,7 @@ export const LanguageDropDown = () => {
             );
           })}
         </ul>
-      )}
+      )}*/}
     </div>
   );
 };

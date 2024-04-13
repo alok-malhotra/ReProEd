@@ -21,7 +21,7 @@ const Register: NextPage = () => {
         <h1 className="mt-20 text-center text-3xl font-extrabold tracking-tight text-white">
           I want to learn...
         </h1>
-        <section className="">
+        <section className="mx-auto grid w-full max-w-5xl grid-cols-1 flex-col gap-x-2 gap-y-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
           {languages.map((language) => (
             <Link
               key={language.name}

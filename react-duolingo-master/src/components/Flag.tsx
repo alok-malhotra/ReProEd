@@ -13,12 +13,14 @@ export const Flag = ({
 }) => {
   const height = width * (19.3171 / 24);
   return (
-    <svg viewBox={language.viewBox} style={{ height, width }}>
-      <image
-        height={flagsSvg.height}
-        href={flagsSvg.src}
-        width={flagsSvg.width}
-      ></image>
+    // <svg viewBox={language.viewBox} style={{ height, width }}>
+    //   <image
+    //     height={flagsSvg.height}
+    //     href={flagsSvg.src}
+    //     width={flagsSvg.width}
+    //   ></image>
+    // </svg>
+    <svg style={{ height, width }}>
     </svg>
   );
 };
