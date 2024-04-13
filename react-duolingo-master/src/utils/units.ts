@@ -19,26 +19,34 @@ export type TileType = Tile["type"];
 export const units: readonly Unit[] = [
   {
     unitNumber: 1,
-    description: "Form basic sentences, greet people",
+    title: "Contraception",
+    description: "Learn more about pregnancy prevention medications",
     backgroundColor: "bg-[#dba4eb]",
     textColor: "text-[#dba4eb]",
     borderColor: "border-[#be3de3]",
     tiles: [
       {
         type: "book",
-        description: "Form basic sentences",
+        description: "Contraceptive options",
       },
       {
         type: "book",
-        description: "Good morning",
+        description: "Oral contraceptives (OCP)",
       },
       {
         type: "book",
-        description: "Greet people",
+        description: "Intrauterine devices (IUD)",
       },
-      { type: "treasure" },
-      { type: "book", description: "A date" },
-      { type: "trophy", description: "Unit 1 review" },
+      {
+        type: "book",
+        description: "Barrier methods",
+      },
+      {
+        type: "book",
+        description: "Cycle timing",
+      },
+      { type: "book", description: "Other topics" },
+      { type: "trophy", description: "Contraceptives summary" },
     ],
   },
   // {

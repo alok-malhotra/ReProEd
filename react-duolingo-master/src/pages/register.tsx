@@ -6,11 +6,26 @@ import { useBoundStore } from "~/hooks/useBoundStore";
 import { Flag } from "~/components/Flag";
 import _bgSnow from "../../public/bg-snow.svg";
 import type { StaticImageData } from "next/image";
+import {ContraceptionIconSvg, FetusIconSvg, VirusIconSvg} from "~/components/Svgs";
 
 const bgSnow = _bgSnow as StaticImageData;
 
+const renderSwitch = (param) => {
+  switch(param) {
+    case 'Contraceptives':
+      return <ContraceptionIconSvg className="h-fit md:w-[100px]"/>;
+    case 'Pregnancy':
+    return <FetusIconSvg className="h-fit md:w-[100px]"/>;
+    case 'Common Illnesses':
+    return <VirusIconSvg className="h-fit md:w-[100px]"/>;
+    default:
+      return "";
+  }
+};
+
 const Register: NextPage = () => {
   const setLanguage = useBoundStore((x) => x.setLanguage);
+  const output = "";
   return (
     <main
       className="flex min-h-screen flex-col items-center bg-[#235390] text-white"
@@ -31,8 +46,9 @@ const Register: NextPage = () => {
               }
               onClick={() => setLanguage(language)}
             >
-              <Flag language={language} />
-              <span>{language.name}</span>
+            {renderSwitch(language.name)}
+
+            <span>{language.name}</span>
             </Link>
           ))}
         </section>
