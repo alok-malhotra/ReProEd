@@ -7,6 +7,7 @@ import { SettingsRightNav } from "~/components/SettingsRightNav";
 import { useBoundStore } from "~/hooks/useBoundStore";
 
 const Account: NextPage = () => {
+  
   const name = useBoundStore((x) => x.name);
   const setName = useBoundStore((x) => x.setName);
   const [localName, setLocalName] = useState(name);
@@ -15,9 +16,19 @@ const Account: NextPage = () => {
   const setUsername = useBoundStore((x) => x.setUsername);
   const [localUsername, setLocalUsername] = useState(username);
 
+  const sexpref = useBoundStore((x) => x.sexpref);
+  const setSexPref = useBoundStore((x) => x.setSexPref);
+  const [localSexPref, setLocalSexPref] = useState(sexpref);
+
+  const sexactive = useBoundStore((x) => x.sexactive);
+  const setSexActive = useBoundStore((x) => x.setSexActive);
+  const [localSexActive, setLocalSexActive] = useState(sexactive);
+
   const accountOptions = [
     { title: "Name", value: localName, setValue: setLocalName },
     { title: "Username", value: localUsername, setValue: setLocalUsername },
+    { title: "Sexual Preference", value: localSexPref, setValue: setLocalSexPref },
+    { title: "Sexually Active Status", value: localSexActive, setValue: setLocalSexActive },
   ];
 
   return (
@@ -35,8 +46,10 @@ const Account: NextPage = () => {
             onClick={() => {
               setName(localName);
               setUsername(localUsername);
+              setSexPref(localSexPref);
+              setSexActive(localSexActive);
             }}
-            disabled={name === localName && username === localUsername}
+            disabled={name === localName && username === localUsername && sexpref === localSexPref && sexactive === localSexActive}
           >
             Save changes
           </button>

@@ -63,6 +63,12 @@ const ProfileTopSection = () => {
   const followersCount = 0;
   const language = useBoundStore((x) => x.language);
 
+  const age = useBoundStore((x) => x.age);
+  const email = useBoundStore((x) => x.email);
+  const sexbirth = useBoundStore((x) => x.sexbirth);
+  const sexpref = useBoundStore((x) => x.sexpref);
+  const sexactive = useBoundStore((x) => x.sexactive);
+
   useEffect(() => {
     if (!loggedIn) {
       void router.push("/");
@@ -77,16 +83,17 @@ const ProfileTopSection = () => {
       <div className="flex grow flex-col justify-between gap-3">
         <div className="flex flex-col gap-2">
           <div>
-            <h1 className="text-2xl font-bold">{name}</h1>
-            <div className="text-sm text-gray-400">{username}</div>
+            <h1 className="text-2xl font-bold">Name: {name}</h1>
+            <div className="text-sm text-gray-400">Username: {username}</div>
+            <div className="text-sm text-gray-400">Age: {age}</div>
+            <div className="text-sm text-gray-400">Email: {email}</div>
+            <div className="text-sm text-gray-400">Sex at birth: {sexbirth}</div>
+            <div className="text-sm text-gray-400">Sexual preference: {sexpref}</div>
+            <div className="text-sm text-gray-400">Sexuallly active status: {sexactive}</div>
           </div>
           <div className="flex items-center gap-3">
             <ProfileTimeJoinedSvg />
             <span className="text-gray-500">{`Joined ${joinedAt}`}</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <ProfileFriendsSvg />
-            <span className="text-gray-500">{`${followingCount} Following / ${followersCount} Followers`}</span>
           </div>
         </div>
 

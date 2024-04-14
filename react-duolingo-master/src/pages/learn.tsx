@@ -231,6 +231,14 @@ const TileTooltip = ({
   const activeBackgroundColor = unit?.backgroundColor ?? "bg-green-500";
   const activeTextColor = unit?.textColor ?? "text-green-500";
 
+  const age = useBoundStore((x) => x.age);
+
+  const sexbirth = useBoundStore((x) => x.sexbirth);
+  const sexpref = useBoundStore((x) => x.sexpref);
+  const sexactive = useBoundStore((x) => x.sexactive);
+
+  const language = useBoundStore((x) => x.language);
+
   return (
     <div
       className={[
