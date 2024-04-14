@@ -63,9 +63,15 @@ export const generateContraceptiveCourseInfo = (courseName) => {
  * @return: Patient request sentence and response format for condition modules
 */
 export const generateConditionCourseInfo = (courseName) => {
-    return `Your task is to provide extensive detail on ${courseName}. The patient would most benefit from information on how it works, efficacy, cost, pros, and cons. Your response must be structured as a JSON object that adheres to the following structure: 
+    return `Your task is to provide extensive detail on ${courseName}. The patient would most benefit from information on prevalence of ${courseName} based on their demographics, preventative measures that can reduce risk of ${courseName}, symptoms, diagnoses, treatments, and when to see a doctor. Your response must be structured as a JSON object that adheres to the following structure: 
     {
-
+        "name": '"${courseName}"',
+        "prevalence": '"The prevalence of ${courseName} is INSERT PREVALENCE"',
+        "preventative_measures": ARRAY OF PREVENTATIVE MEASURES,
+        "symptoms":  ARRAY OF SYMPTOMS,
+        "diagnoses":  ARRAY OF DIAGNOSES,
+        "treatments":  ARRAY OF TREATMENTS,
+        "when_to_see_doctor": "WHEN TO SEE DOCTOR INFO"
     }`
 }
 
@@ -75,9 +81,14 @@ export const generateConditionCourseInfo = (courseName) => {
  * @return: Patient request sentence and response format for pregnancy modules.
 */
 export const generatePregnancyCourseInfo = (courseName) => {
-    return `Your task is to provide extensive detail on ${courseName}. The patient would most benefit from information on how it works, efficacy, cost, pros, and cons. Your response must be structured as a JSON object that adheres to the following structure: 
+    return `Your task is to provide extensive detail on ${courseName}. The patient would most benefit from TRIMESTER-SPECIFIC information on what to look out for (bad), what is normal, recommended tests to get, good things that can be done for maternal health, and good things that can be done for the baby's health. Your response must be structured as a JSON object that adheres to the following structure: 
     {
-
+        "name": '"${courseName}"',
+        "what_to_look_out_for": ARRAY OF WHAT TO LOOK OUT FOR,
+        "what_is_normal": ARRAY OF WHAT IS NORMAL,
+        "testing_to_get":  ARRAY OF RECOMMENDED TESTS,
+        "maternal_health":  ARRAY OF GOOD THINGS TO DO FOR MATERNAL HEALTH,
+        "baby_health":  ARRAY OF GOOD THINGS TO DO FOR BABY'S HEALTH,
     }`
 }
 
