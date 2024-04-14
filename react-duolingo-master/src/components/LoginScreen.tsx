@@ -215,7 +215,7 @@ export const LoginScreen = ({
             <div className="h-[2px] grow bg-gray-300"></div>
           </div>
           <p className="text-center text-xs leading-5 text-gray-400">
-            By signing in to ReProEd, you agree to our{" "}
+            By signing in to ReproEd, you agree to our{" "}
             <Link
               className="font-bold"
               href="/"
