@@ -12,6 +12,8 @@ import { RightBar } from "~/components/RightBar";
 import { LeftBar } from "~/components/LeftBar";
 import { LoginScreen, useLoginScreen } from "~/components/LoginScreen";
 
+import axios from "axios"; // Import Axios
+
 function App() {
   const [response, setResponse] = useState(null);
   const router = useRouter();
@@ -22,6 +24,8 @@ function App() {
   const followingCount = 0;
   const followersCount = 0;
   const language = useBoundStore((x) => x.language);
+
+  const [responseComplete, setResponseComplete] = useState(false);
 
   const age = useBoundStore((x) => x.age);
   const email = useBoundStore((x) => x.email);
@@ -35,21 +39,38 @@ function App() {
 const fetchData = async () => {
 
   try {
-  const requestOptions = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-    age: age,
-    sexAtBirth: sexbirth,
-    sexualPreference: sexpref,
-    subjectMatterExpertise: language,
-    courseName: topic,
-    active: sexactive
-    })
-  };
-  const response = await fetch('http://localhost:8000/api/prompt', requestOptions);
-  const data = await response.json();
-  setResponse(data);
+
+    setResponseComplete(false);
+    
+    let config = {
+      method: 'get',
+      maxBodyLength: Infinity,
+      url: 'http://localhost:8000/api/prompt',
+      headers: { 
+      'Content-Type': 'application/json'
+      },
+      timeout: 10000,
+      params: {
+        age: '28',
+        sexAtBirth: 'female',
+        sexualPreference: 'heterosexual',
+        subjectMatterExpertise: 'pregnancy',
+        courseName: 'first trimester',
+        active: 'yes'
+      }
+      };
+
+      axios.request(config)
+      .then((response) => {
+      console.log(response)
+      setResponse(response.data);
+      setResponseComplete(true);
+      //console.log(JSON.stringify(response.data));
+      })
+      .catch((error) => {
+      console.log(error);
+      });
+
   } catch (error) {
     console.error('Error fetching data:', error);
   }
@@ -88,6 +109,11 @@ const fetchData = async () => {
 
     const topBarColors = getTopBarColors(scrollY);
 
+  useEffect(() => {
+    if (topic) {  // Ensure topic is not null or undefined
+      fetchData();
+    }
+  }, [topic]);
 
 return (
 
@@ -107,11 +133,7 @@ return (
                     <h1>{topic}</h1>
                   </header>
             </div>
-            {response && (
-            <div>
-            <pre>{JSON.stringify(response, null, 2)}</pre>
-            </div>
-            )}
+            {!responseComplete ? <div>Response Loading...</div>: <div>{response['baby_health'][0]}</div>}
           </div>
 
 

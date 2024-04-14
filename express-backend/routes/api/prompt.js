@@ -8,11 +8,13 @@ const router = express.Router()
 // @desc   Prompt ChatGPT to provide information on request
 // @access Public
 router.get('/', async (req, res) => {
-        const {age, sexAtBirth, sexualPreference, subjectMatterExpertise, courseName, active} = req.body
+        console.log(req.body)
+        const {age, sexAtBirth, sexualPreference, subjectMatterExpertise, courseName, active} = req.query
         const prompt = promptGenerator(age, sexAtBirth, sexualPreference, subjectMatterExpertise, courseName, active)
 
         try {
             const response = await requestOpenAI.text(prompt)
+            //console.log(response.choices[0].message.content)
             const cleanedString = response.choices[0].message.content.replace(/\\n/g, '').replace(/\\/g, '');
             const jsonObject = JSON.parse(cleanedString); // Parse the cleaned string into a JSON object
             res.status(200).send(jsonObject)
