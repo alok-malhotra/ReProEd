@@ -19,26 +19,6 @@ import womanPng from "../../public/woman.png";
 import { useBoundStore } from "~/hooks/useBoundStore";
 import { useRouter } from "next/router";
 
-const lessonProblem1 = {
-  type: "SELECT_1_OF_3",
-  question: `Which one of these is "the apple"?`,
-  answers: [
-    { icon: <AppleSvg />, name: "la manzana" },
-    { icon: <BoySvg />, name: "el niño" },
-    { icon: <WomanSvg />, name: "la mujer" },
-  ],
-  correctAnswer: 0,
-} as const;
-
-const lessonProblem2 = {
-  type: "WRITE_IN_ENGLISH",
-  question: "El niño",
-  answerTiles: ["woman", "milk", "water", "I", "The", "boy"],
-  correctAnswer: [4, 5],
-} as const;
-
-const lessonProblems = [lessonProblem1, lessonProblem2];
-
 const numbersEqual = (a: readonly number[], b: readonly number[]): boolean => {
   return a.length === b.length && a.every((_, i) => a[i] === b[i]);
 };
@@ -74,8 +54,6 @@ const Lesson: NextPage = () => {
   const [questionResults, setQuestionResults] = useState<QuestionResult[]>([]);
   const [reviewLessonShown, setReviewLessonShown] = useState(false);
 
-  const problem = lessonProblems[lessonProblem] ?? lessonProblem1;
-
   const totalCorrectAnswersNeeded = 2;
 
   const [isStartingLesson, setIsStartingLesson] = useState(true);
@@ -85,10 +63,6 @@ const Lesson: NextPage = () => {
       ? 3 - incorrectAnswerCount
       : null;
 
-  const { correctAnswer } = problem;
-  const isAnswerCorrect = Array.isArray(correctAnswer)
-    ? numbersEqual(selectedAnswers, correctAnswer)
-    : selectedAnswer === correctAnswer;
 
   const onCheckAnswer = () => {
     setCorrectAnswerShown(true);
@@ -180,47 +154,6 @@ const Lesson: NextPage = () => {
     );
   }
 
-  switch (problem.type) {
-    case "SELECT_1_OF_3": {
-      return (
-        <ProblemSelect1Of3
-          problem={problem}
-          correctAnswerCount={correctAnswerCount}
-          totalCorrectAnswersNeeded={totalCorrectAnswersNeeded}
-          selectedAnswer={selectedAnswer}
-          setSelectedAnswer={setSelectedAnswer}
-          quitMessageShown={quitMessageShown}
-          correctAnswerShown={correctAnswerShown}
-          setQuitMessageShown={setQuitMessageShown}
-          isAnswerCorrect={isAnswerCorrect}
-          onCheckAnswer={onCheckAnswer}
-          onFinish={onFinish}
-          onSkip={onSkip}
-          hearts={hearts}
-        />
-      );
-    }
-
-    case "WRITE_IN_ENGLISH": {
-      return (
-        <ProblemWriteInEnglish
-          problem={problem}
-          correctAnswerCount={correctAnswerCount}
-          totalCorrectAnswersNeeded={totalCorrectAnswersNeeded}
-          selectedAnswers={selectedAnswers}
-          setSelectedAnswers={setSelectedAnswers}
-          quitMessageShown={quitMessageShown}
-          correctAnswerShown={correctAnswerShown}
-          setQuitMessageShown={setQuitMessageShown}
-          isAnswerCorrect={isAnswerCorrect}
-          onCheckAnswer={onCheckAnswer}
-          onFinish={onFinish}
-          onSkip={onSkip}
-          hearts={hearts}
-        />
-      );
-    }
-  }
 };
 
 export default Lesson;

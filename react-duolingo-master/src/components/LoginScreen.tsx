@@ -67,10 +67,11 @@ export const LoginScreen = ({
       <header className="flex flex-row-reverse justify-between sm:flex-row">
         <button
           className="flex text-gray-400"
-          onClick={() => setLoginScreenState("HIDDEN")}
+          onClick={() => {setLoginScreenState("HIDDEN"); void router.push("/learn");}}
         >
           <CloseSvg />
-          <span className="sr-only">Close</span>
+          {/*<span className="sr-only">Close</span>*/}
+          <Link href="/learn"> Close </Link>
         </button>
         <button
           className="hidden rounded-2xl border-2 border-b-4 border-gray-200 px-4 py-3 text-sm font-bold uppercase text-blue-400 transition hover:bg-gray-50 hover:brightness-90 sm:block"
@@ -159,23 +160,21 @@ export const LoginScreen = ({
           >
             {loginScreenState === "LOGIN" ? "Log in" : "Create account"}
           </button>
-          <div className="flex items-center gap-2">
-            <div className="h-[2px] grow bg-gray-300"></div>
-            <span className="font-bold uppercase text-gray-400">or</span>
+          <div className="flex items-center">
             <div className="h-[2px] grow bg-gray-300"></div>
           </div>
           <p className="text-center text-xs leading-5 text-gray-400">
             By signing in to ReProEd, you agree to our{" "}
             <Link
               className="font-bold"
-              href="https://www.duolingo.com/terms?wantsPlainInfo=1"
+              href="/"
             >
               Terms
             </Link>{" "}
             and{" "}
             <Link
               className="font-bold"
-              href="https://www.duolingo.com/privacy?wantsPlainInfo=1"
+              href="/"
             >
               Privacy Policy
             </Link>
