@@ -5,8 +5,12 @@ import authRouter from './routes/api/auth.js';
 import profileRouter from './routes/api/profile.js';
 import postRouter from './routes/api/post.js';
 import promptRouter from './routes/api/prompt.js'
+import cors from 'cors';
 
 const app = express();
+
+// var cors = require('cors');
+app.use(cors());
 
 // Init Middleware
 app.use(express.json({extended: false}));
