@@ -5,9 +5,9 @@ const generatePrompt = (age, sexAtBirth, sexualPreference, subjectMatterExpertis
     const patientDemo = sentenceGenerators.generatePatientDemographics(age, sexAtBirth, sexualPreference, active)
     const patientRequest= sentenceGenerators.generatePatientRequest(courseName, subjectMatterExpertise)
     let courseInfo = ''
-    if (subjectMatterExpertise == 'pregnancy') {
+    if (subjectMatterExpertise == 'Pregnancy') {
         courseInfo = sentenceGenerators.generatePregnancyCourseInfo(courseName)
-    } else if (subjectMatterExpertise == 'reproductive illness') { 
+    } else if (subjectMatterExpertise == 'Common Illnesses') { 
         courseInfo = sentenceGenerators.generateConditionCourseInfo(courseName)
     } else { // In this case, subjectMatterExpertise == 'contraceptive'
         courseInfo = sentenceGenerators.generateContraceptiveCourseInfo(courseName)
