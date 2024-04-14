@@ -7,7 +7,7 @@ const generatePrompt = (age, sexAtBirth, sexualPreference, subjectMatterExpertis
     let courseInfo = ''
     if (subjectMatterExpertise == 'Pregnancy') {
         courseInfo = sentenceGenerators.generatePregnancyCourseInfo(courseName)
-    } else if (subjectMatterExpertise == 'Common Illnesses') { 
+    } else if (subjectMatterExpertise == 'Reproductive Illnesses') { 
         courseInfo = sentenceGenerators.generateConditionCourseInfo(courseName)
     } else { // In this case, subjectMatterExpertise == 'contraceptive'
         courseInfo = sentenceGenerators.generateContraceptiveCourseInfo(courseName)
