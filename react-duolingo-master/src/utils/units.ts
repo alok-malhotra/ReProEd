@@ -27,55 +27,55 @@ export const units: readonly Unit[] = [
     tiles: [
       {
         type: "book",
-        description: "Contraceptive options",
+        description: "Abstinence",
       },
       {
         type: "book",
-        description: "Oral contraceptives (OCP)",
+        description: "Withdrawal",
       },
       {
         type: "book",
-        description: "Intrauterine devices (IUD)",
+        description: "External Condoms",
       },
       {
         type: "book",
-        description: "Barrier methods",
+        description: "Internal Condoms",
       },
       {
         type: "book",
-        description: "Cycle timing",
+        description: "Diaphragm",
       },
       {
         type: "book",
-        description: "Cycle timing",
+        description: "Oral Contraceptives",
       },
       {
         type: "book",
-        description: "Cycle timing",
+        description: "Contraceptive Implants",
       },
       {
         type: "book",
-        description: "Cycle timing",
+        description: "Intrauterine Devices (IUDs)",
       },
       {
         type: "book",
-        description: "Cycle timing",
+        description: "Contraceptive Injections",
       },
       {
         type: "book",
-        description: "Cycle timing",
+        description: "Male Birth Control",
       },
       {
         type: "book",
-        description: "Cycle timing",
+        description: "Tubal Ligation",
       },
       {
         type: "book",
-        description: "Cycle timing",
+        description: "Vasectomy",
       },
       {
         type: "book",
-        description: "Cycle timing",
+        description: "Emergency Contraceptive",
       },
       { type: "trophy", description: "Contraceptives summary" },
     ],
@@ -83,7 +83,7 @@ export const units: readonly Unit[] = [
   {
     unitNumber: 2,
     title: "Pregnancy",
-    description: "preggggggnant",
+    description: "what to expect when you're expecting",
     backgroundColor: "bg-[#db7ff5]",
     textColor: "text-[#db7ff5]",
     borderColor: "border-[#db7ff5]",
@@ -113,37 +113,92 @@ export const units: readonly Unit[] = [
     tiles: [
       {
         type: "book",
-        description: "Contraceptive options",
+        description: "UTI: Cystitis",
       },
       {
         type: "book",
-        description: "Oral contraceptives (OCP)",
+        description: "UTI: Urethritis",
       },
       {
         type: "book",
-        description: "Intrauterine devices (IUD)",
+        description: "UTI: Pyelonephritis",
       },
       {
         type: "book",
-        description: "Barrier methods",
+        description: "UTI: Vaginitis",
       },
       {
         type: "book",
-        description: "Cycle timing",
+        description: "STI: Bacterial Vaginosis",
       },
       {
         type: "book",
-        description: "Cycle timing",
+        description: "STI: Chlamydia",
       },
       {
         type: "book",
-        description: "Cycle timing",
+        description: "STI: Gonorrhea",
       },
       {
         type: "book",
-        description: "Cycle timing",
+        description: "STI: Herpes",
       },
-      { type: "book", description: "Other topics" },
+      {
+        type: "book",
+        description: "STI: HIV/AIDS",
+      },
+      {
+        type: "book",
+        description: "STI: Human Papilloma Virus (HPV)",
+      },
+      {
+        type: "book",
+        description: "STI: Mycoplasma Genitalium",
+      },
+      {
+        type: "book",
+        description: "STI: Pelvic Inflammatory Disease (PID)",
+      },
+      {
+        type: "book",
+        description: "STI: Syphilis",
+      },
+      {
+        type: "book",
+        description: "STI: Trichomoniasis",
+      },
+      {
+        type: "book",
+        description: "Cervical Cancer",
+      },
+      {
+        type: "book",
+        description: "Ovarian Cancer",
+      },
+      {
+        type: "book",
+        description: "Uterine Cancer",
+      },
+      {
+        type: "book",
+        description: "Vaginal Cancer",
+      },
+      {
+        type: "book",
+        description: "Vulvular Cancer",
+      },
+      {
+        type: "book",
+        description: "Prostate Cancer",
+      },
+      {
+        type: "book",
+        description: "Bladder Cancer",
+      },
+      {
+        type: "book",
+        description: "Testicular Cancer",
+      },
       { type: "trophy", description: "Contraceptives summary" },
     ],
   },

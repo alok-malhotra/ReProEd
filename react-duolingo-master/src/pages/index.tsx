@@ -16,7 +16,7 @@ const Home: NextPage = () => {
   return (
     <main
       className="flex min-h-screen flex-col items-center justify-center bg-[#235390] text-white"
-      // style={{ backgroundImage: `url(${bgSnow.src})` }}
+      style={{ backgroundImage: `url(${bgSnow.src})` }}
     >
       <LanguageHeader />
       <div className="flex w-full flex-col items-center justify-center gap-3 px-4 py-16 md:flex-row md:gap-36">
@@ -28,7 +28,9 @@ const Home: NextPage = () => {
           <div className="mx-auto mt-4 flex w-fit flex-col items-center gap-3">
             <Link
               href="/register"
-              className="w-full rounded-2xl border-b-4 border-green-700 bg-green-600 px-10 py-3 text-center font-bold uppercase transition hover:border-green-600 hover:bg-green-500 md:min-w-[320px]"
+              // className="w-full rounded-2xl border-b-4 border-blue-700 bg-blue-600 px-10 py-3 text-center font-bold uppercase transition hover:border-blue-600 hover:bg-blue-500 md:min-w-[320px]"
+              className="w-full rounded-2xl border-b-4 border-purple-700 bg-purple-600 px-10 py-3 text-center font-bold uppercase transition hover:border-purple-600 hover:bg-purple-500 md:min-w-[320px]"
+
             >
               Lets go!
             </Link>
