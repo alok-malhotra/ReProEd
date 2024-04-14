@@ -45,7 +45,38 @@ export const units: readonly Unit[] = [
         type: "book",
         description: "Cycle timing",
       },
-      { type: "book", description: "Other topics" },
+      {
+        type: "book",
+        description: "Cycle timing",
+      },
+      {
+        type: "book",
+        description: "Cycle timing",
+      },
+      {
+        type: "book",
+        description: "Cycle timing",
+      },
+      {
+        type: "book",
+        description: "Cycle timing",
+      },
+      {
+        type: "book",
+        description: "Cycle timing",
+      },
+      {
+        type: "book",
+        description: "Cycle timing",
+      },
+      {
+        type: "book",
+        description: "Cycle timing",
+      },
+      {
+        type: "book",
+        description: "Cycle timing",
+      },
       { type: "trophy", description: "Contraceptives summary" },
     ],
   },
@@ -59,26 +90,17 @@ export const units: readonly Unit[] = [
     tiles: [
       {
         type: "book",
-        description: "Contraceptive options",
+        description: "First Trimester",
       },
       {
         type: "book",
-        description: "Oral contraceptives (OCP)",
+        description: "Second Trimester",
       },
       {
         type: "book",
-        description: "Intrauterine devices (IUD)",
+        description: "Third Trimester",
       },
-      {
-        type: "book",
-        description: "Barrier methods",
-      },
-      {
-        type: "book",
-        description: "Cycle timing",
-      },
-      { type: "book", description: "Other topics" },
-      { type: "trophy", description: "Contraceptives summary" },
+      { type: "trophy", description: "Pregnancy summary" },
     ],
   },
   {
@@ -104,6 +126,18 @@ export const units: readonly Unit[] = [
       {
         type: "book",
         description: "Barrier methods",
+      },
+      {
+        type: "book",
+        description: "Cycle timing",
+      },
+      {
+        type: "book",
+        description: "Cycle timing",
+      },
+      {
+        type: "book",
+        description: "Cycle timing",
       },
       {
         type: "book",
