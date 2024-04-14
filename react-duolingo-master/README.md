@@ -1,8 +1,8 @@
-# React Duolingo
+# React ReproEd
 
-https://react-duolingo-clone.vercel.app/ 
 
-A simple [Duolingo](https://www.duolingo.com) web app clone written with [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Next.js](https://nextjs.org/), [Tailwind](https://tailwindcss.com/), and [Zustand](https://github.com/pmndrs/zustand). I used [create-t3-app](https://github.com/t3-oss/create-t3-app) to initialize the project.
+Reproductive Health Access App. Aims to improve reproductive health literacy and provide actionable information related to the patient’s personal care goals.
 
-<img src="./screenshots/screenshot-mobile.png" alt="Mobile screenshot" />
-<img src="./screenshots/screenshot-desktop.png" alt="Desktop screenshot" />
+
+Start using npm run dev
+Start server with node server.js

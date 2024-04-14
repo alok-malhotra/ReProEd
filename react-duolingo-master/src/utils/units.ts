@@ -105,7 +105,7 @@ export const units: readonly Unit[] = [
   },
   {
     unitNumber: 3,
-    title: "Common Illnesses",
+    title: "Reproductive Illnesses",
     description: "Common reproductive illnesses",
     backgroundColor: "bg-[#f74239]",
     textColor: "text-[#f74239]",

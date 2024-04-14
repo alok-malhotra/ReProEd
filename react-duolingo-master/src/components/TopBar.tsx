@@ -183,29 +183,29 @@ export const TopBar = ({
               //     </div>
               //   );
 
-              case "MORE":
-                return (
-                  <div className="flex grow flex-col">
-                    <Link
-                      className="flex items-center gap-2 p-2 font-bold text-gray-700"
-                      href="https://podcast.duolingo.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <PodcastIconSvg className="h-10 w-10" />
-                      Podcast
-                    </Link>
-                    <Link
-                      className="flex items-center gap-2 border-t-2 border-gray-300 p-2 font-bold text-gray-700"
-                      href="https://schools.duolingo.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <GlobeIconSvg className="h-10 w-10" />
-                      Schools
-                    </Link>
-                  </div>
-                );
+              // case "MORE":
+              //   return (
+              //     <div className="flex grow flex-col">
+              //       <Link
+              //         className="flex items-center gap-2 p-2 font-bold text-gray-700"
+              //         href="/"
+              //         target="_blank"
+              //         rel="noopener noreferrer"
+              //       >
+              //         <PodcastIconSvg className="h-10 w-10" />
+              //         Podcast
+              //       </Link>
+              //       <Link
+              //         className="flex items-center gap-2 border-t-2 border-gray-300 p-2 font-bold text-gray-700"
+              //         href="/"
+              //         target="_blank"
+              //         rel="noopener noreferrer"
+              //       >
+              //         <GlobeIconSvg className="h-10 w-10" />
+              //         Schools
+              //       </Link>
+              //     </div>
+              //   );
 
               case "HIDDEN":
                 return null;

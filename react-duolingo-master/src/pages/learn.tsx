@@ -519,7 +519,7 @@ const Learn: NextPage = () => {
     case 2:
     return "Pregnancy";
     case 3:
-    return "Common Illnesses";
+    return "Reproductive Illnesses";
     default:
       return "idk";
   }
@@ -531,7 +531,7 @@ const Learn: NextPage = () => {
       return 0;
     case "Pregnancy":
     return 1;
-    case "Common Illnesses":
+    case "Reproductive Illnesses":
     return 2;
     default:
       return "idk";
