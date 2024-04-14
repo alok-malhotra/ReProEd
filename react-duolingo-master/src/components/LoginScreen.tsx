@@ -118,6 +118,7 @@ export const LoginScreen = ({
                   <input
                     className="grow rounded-2xl border-2 border-gray-200 bg-gray-50 px-4 py-3"
                     placeholder="Age"
+                    ref={ageInputRef}
                   />
                   <div className="absolute bottom-0 right-0 top-0 flex items-center justify-center pr-4">
                     <div
@@ -154,11 +155,6 @@ export const LoginScreen = ({
             )}
             <input
               className="grow rounded-2xl border-2 border-gray-200 bg-gray-50 px-4 py-3"
-              placeholder="Name"
-              ref={nameInputRef}
-            />
-            <input
-              className="grow rounded-2xl border-2 border-gray-200 bg-gray-50 px-4 py-3"
               placeholder={
                 loginScreenState === "LOGIN"
                   ? "Email"
@@ -182,14 +178,6 @@ export const LoginScreen = ({
                   </Link>
                 </div>
               )}
-            </div>
-
-            <div className="relative flex grow">
-              <input
-                className="grow rounded-2xl border-2 border-gray-200 bg-gray-50 px-4 py-3"
-                placeholder="Age"
-                ref={ageInputRef}
-              />
             </div>
 
             <div className="relative flex grow">
