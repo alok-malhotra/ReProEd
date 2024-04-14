@@ -287,7 +287,7 @@ const TileTooltip = ({
         </div>
         {status === "ACTIVE" ? (
           <Link
-            href="/lesson"
+            href= {'/lesson?topic='+description}
             ///ENTER HERE TO API CALL
             className={[
               "flex w-full items-center justify-center rounded-xl border-b-4 border-gray-200 bg-white p-3 uppercase",
@@ -538,7 +538,7 @@ const Learn: NextPage = () => {
   }
 };
 
-const language = useBoundStore((x) => x.language);
+var language = useBoundStore((x) => x.language);
 
   return (
     <>
