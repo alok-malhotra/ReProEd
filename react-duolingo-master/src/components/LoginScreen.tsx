@@ -114,6 +114,39 @@ export const LoginScreen = ({
           <div className="flex flex-col gap-2 text-black">
             {loginScreenState === "SIGNUP" && (
               <>
+
+                <div className="relative flex grow">
+                  <input
+                    className="grow rounded-2xl border-2 border-gray-200 bg-gray-50 px-4 py-3"
+                    placeholder="Age"
+                    ref={ageInputRef}
+                  />
+                  <div className="absolute bottom-0 right-0 top-0 flex items-center justify-center pr-4">
+                    <div
+                      className="relative flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border-2 border-gray-200 text-gray-400"
+                      onMouseEnter={() => setAgeTooltipShown(true)}
+                      onMouseLeave={() => setAgeTooltipShown(false)}
+                      onClick={() => setAgeTooltipShown((x) => !x)}
+                      role="button"
+                      tabIndex={0}
+                      aria-label="Why do you need an age?"
+                    >
+                      ?
+                      {ageTooltipShown && (
+                        <div className="absolute -right-5 top-full z-10 w-72 rounded-2xl border-2 border-gray-200 bg-white p-4 text-center text-xs leading-5 text-gray-800">
+                          Providing your age ensures you get the right ReproEd
+                          experience. For more details, please visit our{" "}
+                          <Link
+                            href="/"
+                            className="text-blue-700"
+                          >
+                            Privacy Policy
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
                 <input
                   className="grow rounded-2xl border-2 border-gray-200 bg-gray-50 px-4 py-3"
                   placeholder="Name"
@@ -214,7 +247,7 @@ export const LoginScreen = ({
             <div className="h-[2px] grow bg-gray-300"></div>
           </div>
           <p className="text-center text-xs leading-5 text-gray-400">
-            By signing in to ReProEd, you agree to our{" "}
+            By signing in to ReproEd, you agree to our{" "}
             <Link
               className="font-bold"
               href="/"

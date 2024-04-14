@@ -10,7 +10,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         <title>ReproEd</title>
         <meta
           name="description"
-          content="Duolingo web app clone written with React"
+          content="Reproductive health education app made with React"
         />
         <link rel="icon" href="/heart-health-svgrepo-com.ico" />
         <meta name="theme-color" content="#0A0" />

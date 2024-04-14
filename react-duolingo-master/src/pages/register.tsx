@@ -16,7 +16,7 @@ const renderSwitch = (param) => {
       return <ContraceptionIconSvg className="h-fit md:w-[100px]"/>;
     case 'Pregnancy':
     return <FetusIconSvg className="h-fit md:w-[100px]"/>;
-    case 'Common Illnesses':
+    case 'Reproductive Illnesses':
     return <VirusIconSvg className="h-fit md:w-[100px]"/>;
     default:
       return "";
