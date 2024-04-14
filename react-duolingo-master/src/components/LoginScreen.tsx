@@ -31,12 +31,23 @@ export const LoginScreen = ({
   const router = useRouter();
   const loggedIn = useBoundStore((x) => x.loggedIn);
   const logIn = useBoundStore((x) => x.logIn);
+
   const setUsername = useBoundStore((x) => x.setUsername);
   const setName = useBoundStore((x) => x.setName);
+  const setAge = useBoundStore((x) => x.setAge);
+  const setEmail = useBoundStore((x) => x.setEmail);
+  const setSexBirth = useBoundStore((x) => x.setSexBirth);
+  const setSexPref = useBoundStore((x) => x.setSexPref);
+  const setSexActive = useBoundStore((x) => x.setSexActive);
 
   const [ageTooltipShown, setAgeTooltipShown] = useState(false);
 
   const nameInputRef = useRef<null | HTMLInputElement>(null);
+  const ageInputRef = useRef<null | HTMLInputElement>(null);
+  const emailInputRef = useRef<null | HTMLInputElement>(null);
+  const sexBirthInputRef = useRef<null | HTMLInputElement>(null);
+  const sexPrefInputRef = useRef<null | HTMLInputElement>(null);
+  const sexActiveInputRef = useRef<null | HTMLInputElement>(null);
 
   useEffect(() => {
     if (loginScreenState !== "HIDDEN" && loggedIn) {
@@ -48,8 +59,21 @@ export const LoginScreen = ({
     const name =
       nameInputRef.current?.value.trim() || Math.random().toString().slice(2);
     const username = name.replace(/ +/g, "-");
+
+    const age= ageInputRef.current?.value.trim().replace(/ +/g, "-");
+    const email= emailInputRef.current?.value.trim().replace(/ +/g, "-");
+    const sexbirth= sexBirthInputRef.current?.value.trim().replace(/ +/g, "-");
+    const sexpref= sexPrefInputRef.current?.value.trim().replace(/ +/g, "-");
+    const sexactive= sexActiveInputRef.current?.value.trim().replace(/ +/g, "-");
+
     setUsername(username);
     setName(name);
+    setAge(age);
+    setEmail(email);
+    setSexBirth(sexbirth);
+    setSexPref(sexpref);
+    setSexActive(sexactive);
+
     logIn();
     void router.push("/learn");
   };
@@ -93,7 +117,7 @@ export const LoginScreen = ({
                 <div className="relative flex grow">
                   <input
                     className="grow rounded-2xl border-2 border-gray-200 bg-gray-50 px-4 py-3"
-                    placeholder="Age (optional)"
+                    placeholder="Age"
                   />
                   <div className="absolute bottom-0 right-0 top-0 flex items-center justify-center pr-4">
                     <div
@@ -123,23 +147,29 @@ export const LoginScreen = ({
                 </div>
                 <input
                   className="grow rounded-2xl border-2 border-gray-200 bg-gray-50 px-4 py-3"
-                  placeholder="Name (optional)"
+                  placeholder="Name"
                   ref={nameInputRef}
                 />
               </>
             )}
             <input
               className="grow rounded-2xl border-2 border-gray-200 bg-gray-50 px-4 py-3"
+              placeholder="Name"
+              ref={nameInputRef}
+            />
+            <input
+              className="grow rounded-2xl border-2 border-gray-200 bg-gray-50 px-4 py-3"
               placeholder={
                 loginScreenState === "LOGIN"
-                  ? "Email or username (optional)"
-                  : "Email (optional)"
+                  ? "Email"
+                  : "Email"
               }
+              ref={emailInputRef}
             />
             <div className="relative flex grow">
               <input
                 className="grow rounded-2xl border-2 border-gray-200 bg-gray-50 px-4 py-3"
-                placeholder="Password (optional)"
+                placeholder="Password"
                 type="password"
               />
               {loginScreenState === "LOGIN" && (
@@ -153,6 +183,39 @@ export const LoginScreen = ({
                 </div>
               )}
             </div>
+
+            <div className="relative flex grow">
+              <input
+                className="grow rounded-2xl border-2 border-gray-200 bg-gray-50 px-4 py-3"
+                placeholder="Age"
+                ref={ageInputRef}
+              />
+            </div>
+
+            <div className="relative flex grow">
+              <input
+                className="grow rounded-2xl border-2 border-gray-200 bg-gray-50 px-4 py-3"
+                placeholder="Sex at birth"
+                ref={sexBirthInputRef}
+              />
+            </div>
+
+            <div className="relative flex grow">
+              <input
+                className="grow rounded-2xl border-2 border-gray-200 bg-gray-50 px-4 py-3"
+                placeholder="Sexual preference"
+                ref={sexPrefInputRef}
+              />
+            </div>
+
+            <div className="relative flex grow">
+              <input
+                className="grow rounded-2xl border-2 border-gray-200 bg-gray-50 px-4 py-3"
+                placeholder="Are you sexually active? (yes or no)"
+                ref={sexActiveInputRef}
+              />
+            </div>
+
           </div>
           <button
             className="rounded-2xl border-b-4 border-blue-500 bg-blue-400 py-3 font-bold uppercase text-white transition hover:brightness-110"
