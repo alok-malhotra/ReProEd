@@ -133,10 +133,10 @@ export const LoginScreen = ({
                       ?
                       {ageTooltipShown && (
                         <div className="absolute -right-5 top-full z-10 w-72 rounded-2xl border-2 border-gray-200 bg-white p-4 text-center text-xs leading-5 text-gray-800">
-                          Providing your age ensures you get the right Duolingo
+                          Providing your age ensures you get the right ReproEd
                           experience. For more details, please visit our{" "}
                           <Link
-                            href="https://www.duolingo.com/privacy"
+                            href="/"
                             className="text-blue-700"
                           >
                             Privacy Policy
