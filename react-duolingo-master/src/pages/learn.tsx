@@ -25,6 +25,8 @@ import {
   ActiveTrophySvg,
   ActiveDumbbellSvg,
   PracticeExerciseSvg,
+  GoldenHealthIconSvg,
+  GoldenHealthBookSvg,
 } from "~/components/Svgs";
 import { TopBar } from "~/components/TopBar";
 import { BottomBar } from "~/components/BottomBar";
@@ -72,10 +74,8 @@ const TileIcon = ({
     case "book":
       return status === "COMPLETE" ? (
         <GoldenBookSvg />
-      ) : status === "ACTIVE" ? (
-        <ActiveBookSvg />
       ) : (
-        <LockedBookSvg />
+        <ActiveBookSvg />
       );
     case "dumbbell":
       return status === "COMPLETE" ? (
@@ -121,6 +121,7 @@ const tileLeftClassNames = [
   "left-[45px]",
   "left-[70px]",
   "left-[45px]",
+  
 ] as const;
 
 type TileLeftClassName = (typeof tileLeftClassNames)[number];
@@ -285,7 +286,7 @@ const TileTooltip = ({
               activeTextColor,
             ].join(" ")}
           >
-            Start
+            EXPLORE
           </Link>
         ) : status === "LOCKED" ? (
           <button
