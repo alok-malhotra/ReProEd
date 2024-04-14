@@ -54,14 +54,14 @@ function App() {
   const renderContraceptivesInfo = () => {
     return (
       <div>
-        <h1>`${contraceptionInfo.name}`</h1>
-        <h2>`How it Works: ${contraceptionInfo.how_it_works}`</h2>
-        <h3>`Efficacy: ${contraceptionInfo.efficacy}`</h3>
-        <h3>`Cost: ${contraceptionInfo.cost}`</h3>
-        <h3>Pros</h3>
-        <UnorderedList list={contraceptionInfo.pros} />
-        <h3>Cons</h3>
-        <UnorderedList list={contraceptionInfo.cons} />
+        <h1><b>{contraceptionInfo.name}</b></h1><br></br>
+        <h2><b>How it Works:</b> {contraceptionInfo.how_it_works}</h2><br></br>
+        <h3><b>Efficacy:</b> {contraceptionInfo.efficacy}</h3><br></br>
+        <h3><b>Cost:</b> {contraceptionInfo.cost}</h3><br></br>
+        <h3><b>Pros:</b></h3>
+        <UnorderedList list={contraceptionInfo.pros} /><br></br>
+        <h3><b>Cons:</b></h3>
+        <UnorderedList list={contraceptionInfo.cons} /><br></br>
       </div>
     )
   }
@@ -69,17 +69,17 @@ function App() {
   const renderPregnancyInfo = () => {
     return (
       <div>
-        <h1>`${pregnancyInfo.name}`</h1>
-        <h2>What is Normal?</h2>
-        <UnorderedList list={pregnancyInfo.what_is_normal} />
-        <h2>What to Look Out For?</h2>
-        <UnorderedList list={pregnancyInfo.what_to_look_out_for} />
-        <h2>What Testing to Get?</h2>
-        <UnorderedList list={pregnancyInfo.testing_to_get} />
-        <h2>Maternal Health Action Items</h2>
-        <UnorderedList list={pregnancyInfo.maternal_health} />
-        <h2>Baby Health Action Items</h2>
-        <UnorderedList list={pregnancyInfo.baby_health} />
+        <h1><b>{pregnancyInfo.name}</b></h1><br></br>
+        <h2><b>What is Normal?</b></h2>
+        <UnorderedList list={pregnancyInfo.what_is_normal} /><br></br>
+        <h2><b>What to Look Out For?</b></h2>
+        <UnorderedList list={pregnancyInfo.what_to_look_out_for} /><br></br>
+        <h2><b>What Testing to Get?</b></h2>
+        <UnorderedList list={pregnancyInfo.testing_to_get} /><br></br>
+        <h2><b>Maternal Health Action Items</b></h2>
+        <UnorderedList list={pregnancyInfo.maternal_health} /><br></br>
+        <h2><b>Baby Health Action Items</b></h2>
+        <UnorderedList list={pregnancyInfo.baby_health} /><br></br>
       </div>
     )
   }
@@ -87,17 +87,17 @@ function App() {
   const renderConditionInfo = () => {
     return (
       <div>
-        <h1>`${conditionInfo.name}</h1>
-        <h2>`${conditionInfo.prevalence}`</h2>
-        <h2>Preventative Measures</h2>
-        <UnorderedList list={conditionInfo.preventative_measures} />
-        <h2>Symptoms</h2>
-        <UnorderedList list={conditionInfo.symptoms} />
-        <h2>Diagnoses</h2>
-        <UnorderedList list={conditionInfo.diagnoses} />
-        <h2>Treatments</h2>
-        <UnorderedList list={conditionInfo.treatments} />
-        <h2>`${conditionInfo.when_to_see_doctor}`</h2>
+        <h1><b>{conditionInfo.name}</b></h1><br></br>
+        <h2><b>{conditionInfo.prevalence}</b></h2><br></br>
+        <h2><b>Preventative Measures</b></h2>
+        <UnorderedList list={conditionInfo.preventative_measures} /><br></br>
+        <h2><b>Symptoms</b></h2>
+        <UnorderedList list={conditionInfo.symptoms} /><br></br>
+        <h2><b>Diagnoses</b></h2>
+        <UnorderedList list={conditionInfo.diagnoses} /><br></br>
+        <h2><b>Treatments</b></h2>
+        <UnorderedList list={conditionInfo.treatments} /><br></br>
+        <h2><b>{conditionInfo.when_to_see_doctor}</b></h2>
       </div>
     )
   }
@@ -208,14 +208,13 @@ const fetchData = async () => {
           <div>
             <div className="App">
                   <header className="App-header">
-                    <h1>{topic}</h1>
                   </header>
             </div>
             {
               !responseComplete ? 
-                <div>Response Loading...</div> : 
+                <div><b>Response Loading...</b></div> : 
                 <div>
-                  ${renderInfo()}
+                  {renderInfo()}
                 </div>
                 
             }
