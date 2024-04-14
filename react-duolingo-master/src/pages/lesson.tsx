@@ -51,12 +51,12 @@ const fetchData = async () => {
       },
       timeout: 10000,
       params: {
-        age: '28',
-        sexAtBirth: 'female',
-        sexualPreference: 'heterosexual',
-        subjectMatterExpertise: 'pregnancy',
-        courseName: 'first trimester',
-        active: 'yes'
+        age: age,
+        sexAtBirth: sexbirth,
+        sexualPreference: sexpref,
+        subjectMatterExpertise: language.name,
+        courseName: topic,
+        active: sexactive
       }
       };
 

@@ -8,7 +8,6 @@ const router = express.Router()
 // @desc   Prompt ChatGPT to provide information on request
 // @access Public
 router.get('/', async (req, res) => {
-        console.log(req.body)
         const {age, sexAtBirth, sexualPreference, subjectMatterExpertise, courseName, active} = req.query
         const prompt = promptGenerator(age, sexAtBirth, sexualPreference, subjectMatterExpertise, courseName, active)
 
