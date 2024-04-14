@@ -3,13 +3,13 @@ import * as sentenceGenerators from './sentenceCreators.js'
 const generatePrompt = (age, sexAtBirth, sexualPreference, subjectMatterExpertise, courseName, active) => {
     const doctorRole = sentenceGenerators.generateDoctorRole(subjectMatterExpertise)
     const patientDemo = sentenceGenerators.generatePatientDemographics(age, sexAtBirth, sexualPreference, active)
-    const patientRequest= sentenceGenerators.generatePatientRequest(courseName)
+    const patientRequest= sentenceGenerators.generatePatientRequest(courseName, subjectMatterExpertise)
     let courseInfo = ''
-    if (subjectMatterExpertise == 'Pregnancy') {
+    if (subjectMatterExpertise == 'pregnancy') {
         courseInfo = sentenceGenerators.generatePregnancyCourseInfo(courseName)
-    } else if (subjectMatterExpertise == 'Conditions') { 
+    } else if (subjectMatterExpertise == 'reproductive illness') { 
         courseInfo = sentenceGenerators.generateConditionCourseInfo(courseName)
-    } else { // In this case, subjectMatterExpertise == 'Contraceptives'
+    } else { // In this case, subjectMatterExpertise == 'contraceptive'
         courseInfo = sentenceGenerators.generateContraceptiveCourseInfo(courseName)
     }
 

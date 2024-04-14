@@ -1,5 +1,6 @@
 import express from 'express'
 import promptGenerator from '../../utils/promptGenerator.js'
+import openai from '../../config/openai.js'
 import * as requestOpenAI from '../../controllers/openaiController.js'
 const router = express.Router()
 
@@ -9,9 +10,12 @@ const router = express.Router()
 router.get('/', async (req, res) => {
         const {age, sexAtBirth, sexualPreference, subjectMatterExpertise, courseName, active} = req.body
         const prompt = promptGenerator(age, sexAtBirth, sexualPreference, subjectMatterExpertise, courseName, active)
+
         try {
-            response = await requestOpenAI.text(prompt)
-            res.send(response)
+            const response = await requestOpenAI.text(prompt)
+            const cleanedString = response.choices[0].message.content.replace(/\\n/g, '').replace(/\\/g, '');
+            const jsonObject = JSON.parse(cleanedString); // Parse the cleaned string into a JSON object
+            res.status(200).send(jsonObject)
         } catch(error) {
             console.log(error.message);
             res.status(500).send('Server Error');

@@ -36,8 +36,8 @@ export const generatePatientDemographics = (age, sexAtBirth, sexualPreference, a
  * @param courseName: (string) Name of current course
  * @return: Patient request sentence
 */
-export const generatePatientRequest = (courseName) => {
-    return `Your patient has come to you requesting information on ${courseName}.`
+export const generatePatientRequest = (courseName, subjectMatterExpertise) => {
+    return `Your patient has come to you requesting information on ${courseName} as ${subjectMatterExpertise}.`
 }
 
 /**
