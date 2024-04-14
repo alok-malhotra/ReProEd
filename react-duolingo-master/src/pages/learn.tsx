@@ -279,6 +279,7 @@ const TileTooltip = ({
         {status === "ACTIVE" ? (
           <Link
             href="/lesson"
+            ///ENTER HERE TO API CALL
             className={[
               "flex w-full items-center justify-center rounded-xl border-b-4 border-gray-200 bg-white p-3 uppercase",
               activeTextColor,
@@ -324,6 +325,8 @@ const UnitSection = ({ unit }: { unit: Unit }): JSX.Element => {
     (x) => x.increaseLessonsCompleted,
   );
   const increaseLingots = useBoundStore((x) => x.increaseLingots);
+
+  const language = useBoundStore((x) => x.language);
 
   return (
     <>
@@ -371,7 +374,7 @@ const UnitSection = ({ unit }: { unit: Unit }): JSX.Element => {
                             text="Jump here?"
                             textColor={unit.textColor}
                           />
-                        ) : selectedTile !== i && status === "ACTIVE" ? (
+                        ) : selectedTile !== i && status === "ACTIVE" && i === 0? (
                           <HoverLabel text="Start" textColor={unit.textColor} />
                         ) : null}
                         <LessonCompletionSvg
@@ -500,6 +503,34 @@ const Learn: NextPage = () => {
 
   const topBarColors = getTopBarColors(scrollY);
 
+  const renderSwitch = (param) => {
+  switch(param) {
+    case 1:
+      return "Contraceptives";
+    case 2:
+    return "Pregnancy";
+    case 3:
+    return "Common Illnesses";
+    default:
+      return "idk";
+  }
+};
+
+ const renderSwitch2 = (param) => {
+  switch(param) {
+    case "Contraceptives":
+      return 0;
+    case "Pregnancy":
+    return 1;
+    case "Common Illnesses":
+    return 2;
+    default:
+      return "idk";
+  }
+};
+
+const language = useBoundStore((x) => x.language);
+
   return (
     <>
       <TopBar
@@ -510,9 +541,17 @@ const Learn: NextPage = () => {
 
       <div className="flex justify-center gap-3 pt-14 sm:p-6 sm:pt-10 md:ml-24 lg:ml-64 lg:gap-12">
         <div className="flex max-w-2xl grow flex-col">
-          {units.map((unit) => (
+
+          {
+            <UnitSection unit={units[renderSwitch2(language.name)]} key={units[renderSwitch2(language.name)].unitNumber} />
+          }
+
+          {/*{units.map((unit) => (
             <UnitSection unit={unit} key={unit.unitNumber} />
-          ))}
+          ))}*/}
+
+          {/*<UnitSection unit={unit} key={unit.unitNumber} />*/}
+
           <div className="sticky bottom-28 left-0 right-0 flex items-end justify-between">
 {/*            <Link
               href="/lesson?practice"
@@ -611,11 +650,13 @@ const UnitHeader = ({
   description,
   backgroundColor,
   borderColor,
+  topic,
 }: {
   unitNumber: number;
   description: string;
   backgroundColor: `bg-${string}`;
   borderColor: `border-${string}`;
+  topic: string;
 }) => {
   const language = useBoundStore((x) => x.language);
   return (
@@ -628,6 +669,7 @@ const UnitHeader = ({
         <div className="flex flex-col gap-1">
           <h2 className="text-2xl font-bold">{unitNumber}</h2>
           <p className="text-lg">{description}</p>
+          <p className="text-lg">{language.title}</p>
         </div>
       </header>
     </article>

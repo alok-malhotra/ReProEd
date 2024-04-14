@@ -69,10 +69,7 @@ export const RightBar = () => {
                 className="flex w-full items-center gap-3 rounded-b-2xl border-t-2 border-gray-300 px-5 py-3 text-left font-bold hover:bg-gray-100"
                 href="/register"
               >
-                <span className="flex items-center justify-center rounded-lg border-2 border-gray-400 px-2 text-lg font-bold text-gray-400">
-                  +
-                </span>
-                <span className="text-gray-600">Add new course</span>
+                <span className="text-gray-600">Select different course</span>
               </Link>
             </div>
           </div>
