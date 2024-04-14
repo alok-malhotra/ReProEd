@@ -108,32 +108,6 @@ function App() {
     return renderPregnancyInfo()
   }
 
-// {
-//   "name": "gonorrhea",
-//   "prevalence": "Based on your demographics, the prevalence of gonorrhea is relatively high among sexually active individuals in your age group. Gonorrhea is one of the most common sexually transmitted infections (STIs) worldwide.",
-//   "preventative_measures": [
-//       "Use condoms consistently and correctly during sexual intercourse to reduce the risk of contracting gonorrhea.",
-//       "Limit the number of sexual partners and practice monogamy with a partner who has been tested and is free of STIs.",
-//       "Regularly get tested for STIs, including gonorrhea, especially if you have multiple sexual partners or engage in unprotected sex."
-//   ],
-//   "symptoms": [
-//       "Pain or burning sensation when urinating",
-//       "Unusual discharge from the penis",
-//       "Pain or swelling in the testicles",
-//       "Sore throat (if gonorrhea was contracted through oral sex)",
-//       "Rectal pain, discharge, or bleeding (if gonorrhea was contracted through anal sex)"
-//   ],
-//   "diagnoses": [
-//       "Testing for gonorrhea can involve a urine sample, swabbing the urethra (for men) or cervix (for women), or swabbing the throat or rectum if there are symptoms in those areas.",
-//       "These samples are then sent to a laboratory for analysis to confirm the presence of the Neisseria gonorrhoeae bacteria."
-//   ],
-//   "treatments": [
-//       "Gonorrhea is typically treated with antibiotics, such as ceftriaxone or cefixime, to cure the infection.",
-//       "It is important to complete the full course of antibiotics as prescribed by your healthcare provider to ensure the infection is completely cleared."
-//   ],
-//   "when_to_see_doctor": "It is important to see a doctor if you experience any symptoms of gonorrhea or if you have had unprotected sexual contact with a partner who has been diagnosed with gonorrhea. Early diagnosis and treatment are key to preventing complications of gonorrhea, such as pelvic inflammatory disease in women or epididymitis in men. Prompt treatment also helps prevent the spread of infection to sexual partners."
-// }
-
 
 const fetchData = async () => {
 
@@ -163,7 +137,7 @@ const fetchData = async () => {
         .then((response) => {
           console.log(response)
           setResponse(response.data);
-          if (language.name == "Common Illnesses") setConditionInfo(response.data);
+          if (language.name == "Reproductive Illnesses") setConditionInfo(response.data);
           else if (language.name == "Pregnancy") setPregnancyInfo(response.data);
           else setContraceptionInfo(response.data);
           console.log(contraceptionInfo)
